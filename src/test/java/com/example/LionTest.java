@@ -1,16 +1,28 @@
 package com.example;
 
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
 import java.util.List;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-public class LionTest {
+class LionTest {
 
     @Test
-    public void getFoodUsesFelineMock() throws Exception {
+    void doesHaveManeReturnsTrueForMale() throws Exception {
+        Feline felineMock = mock(Feline.class);
+        Lion lion = new Lion("Самец", felineMock);
+        assertTrue(lion.doesHaveMane());
+    }
+
+    @Test
+    void doesHaveManeReturnsFalseForFemale() throws Exception {
+        Feline felineMock = mock(Feline.class);
+        Lion lion = new Lion("Самка", felineMock);
+        assertFalse(lion.doesHaveMane());
+    }
+
+    @Test
+    void getFoodCallsFelineEatMeat() throws Exception {
         Feline felineMock = mock(Feline.class);
         when(felineMock.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
 
@@ -22,22 +34,21 @@ public class LionTest {
     }
 
     @Test
-    public void getKittensReturnsCorrectNumber() {
+    void getKittensCallsFeline() throws Exception {
         Feline felineMock = mock(Feline.class);
+        when(felineMock.getKittens()).thenReturn(3);
+
         Lion lion = new Lion("Самец", felineMock);
-        assertEquals(1, lion.getKittens());
+        int kittens = lion.getKittens();
+
+        assertEquals(3, kittens);
+        verify(felineMock, times(1)).getKittens();
     }
 
-    @ParameterizedTest
-    @CsvSource({
-            "3, false",
-            "4, true",
-            "7, true"
-    })
-    public void doesHaveManeReturnsCorrectly(int age, boolean expected) {
-        Feline felineMock = null;
-        Lion lion = new Lion("Самец", felineMock);
-        assertEquals(expected, lion.doesHaveMane(age));
+    @Test
+    void constructorThrowsExceptionForInvalidSex() {
+        Feline felineMock = mock(Feline.class);
+        Exception exception = assertThrows(Exception.class, () -> new Lion("Неизвестно", felineMock));
+        assertEquals("Используйте допустимые значения пола животного - Самец или Самка", exception.getMessage());
     }
 }
-

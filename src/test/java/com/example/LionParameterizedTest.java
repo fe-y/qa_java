@@ -2,20 +2,20 @@ package com.example;
 
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class LionParameterizedTest {
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+
+class LionParameterizedTest {
 
     @ParameterizedTest
     @CsvSource({
-            "3, false",
-            "4, true",
-            "5, true",
-            "7, true"
+            "Самец, true",
+            "Самка, false"
     })
-    public void doesHaveManeReturnsCorrectly(int age, boolean expectedResult) {
-        Feline felineMock = null;
-        Lion lion = new Lion("Самец", felineMock);
-        assertEquals(expectedResult, lion.doesHaveMane(age));
+    void doesHaveManeReturnsCorrectly(String sex, boolean expectedHasMane) throws Exception {
+        Feline felineMock = mock(Feline.class);
+        Lion lion = new Lion(sex, felineMock);
+        assertEquals(expectedHasMane, lion.doesHaveMane());
     }
 }
