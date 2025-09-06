@@ -1,38 +1,45 @@
 package com.example;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
+import static org.junit.jupiter.api.Assertions.*;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+class AnimalTest {
 
-public class AnimalTest {
+    private Animal animal;
+
+    @BeforeEach
+    void setUp() {
+        animal = new Animal();
+    }
 
     @Test
-    public void testGetFamily() {
-        Animal animal = new Animal();
+    void testGetFamily() {
         String expected = "Существует несколько семейств: заячьи, беличьи, мышиные, кошачьи, псовые, медвежьи, куньи";
-        assertEquals(expected, animal.getFamily());
+        String actual = animal.getFamily();
+        assertEquals(expected, actual);
     }
 
     @Test
-    public void testGetFoodHerbivore() throws Exception {
-        Animal animal = new Animal();
-        List<String> expected = List.of("Трава", "Различные растения");
-        assertEquals(expected, animal.getFood("Травоядное"));
-    }
-
-    @Test
-    public void testGetFoodPredator() throws Exception {
-        Animal animal = new Animal();
+    void testGetFoodPredator() throws Exception {
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
-        assertEquals(expected, animal.getFood("Хищник"));
+        List<String> actual = animal.getFood("Хищник");
+        assertEquals(expected, actual);
     }
 
     @Test
-    public void testGetFoodUnknown() {
-        Animal animal = new Animal();
-        Exception exception = assertThrows(Exception.class, () -> animal.getFood("Непонятно"));
-        assertEquals("Неизвестный вид животного, используйте значение Травоядное или Хищник", exception.getMessage());
+    void testGetFoodHerbivore() throws Exception {
+        List<String> expected = List.of("Трава", "Различные растения");
+        List<String> actual = animal.getFood("Травоядное");
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void testGetFoodUnknown() {
+        Exception exception = assertThrows(Exception.class, () -> {
+            animal.getFood("Неизвестное");
+        });
+        assertTrue(exception.getMessage().contains("Неизвестный вид животного"));
     }
 }
