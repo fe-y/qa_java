@@ -15,9 +15,7 @@ public class CatTest {
 
     @BeforeEach
     void setUp() {
-        // Создаем мок Feline
         mockFeline = mock(Feline.class);
-        // Передаем мок в Cat
         cat = new Cat(mockFeline);
     }
 
@@ -28,18 +26,22 @@ public class CatTest {
 
     @Test
     void testGetKittens() {
-        when(mockFeline.getKittens()).thenReturn(1); // обязательно для мока
+        when(mockFeline.getKittens()).thenReturn(1);
+
         assertEquals(1, cat.getKittens());
+
         verify(mockFeline, times(1)).getKittens();
     }
 
     @Test
     void testGetFood() throws Exception {
-        List<String> expected = List.of("Животные", "Птицы", "Рыба");
-        when(mockFeline.eatMeat()).thenReturn(expected); // обязательно для мока
 
-        List<String> actual = cat.getFood();
-        assertEquals(expected, actual);
+        List<String> expectedFood = List.of("Рыба", "Птицы");
+        when(mockFeline.eatMeat()).thenReturn(expectedFood);
+
+        List<String> actualFood = cat.getFood();
+        assertEquals(expectedFood, actualFood);
+
         verify(mockFeline, times(1)).eatMeat();
     }
 }
