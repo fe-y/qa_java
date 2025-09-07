@@ -5,42 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1825ec73-acd4-440b-b2d4-90f95b50af41" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/com.example/Animal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/com.example/Animal.java.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/com.example/Cat.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/com.example/Cat.java.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/com.example/Feline.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/com.example/Feline.java.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/com.example/Lion.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/com.example/Lion.java.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/com.example/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/com.example/index.source.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/branchfc.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/branchnc.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/branchpc.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/bundle.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/class.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/down.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/greenbar.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/group.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/method.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/package.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/prettify.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/prettify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/redbar.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/report.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/report.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/session.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/sort.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/sort.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/source.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-resources/up.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco-sessions.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jacoco-report/jacoco.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +53,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "full__project__6",
+    "git-widget-placeholder": "full__project__with__report",
     "ignore.virus.scanning.warn.message": "true",
     "last_opened_file_path": "C:/Users/SiberiaSOFT/qa_java",
     "settings.editor.selected.configurable": "configurable.group.appearance"
