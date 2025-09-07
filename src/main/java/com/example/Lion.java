@@ -15,7 +15,7 @@ public class Lion {
         } else {
             throw new Exception("Используйте допустимые значения пола животного - Самец или Самка");
         }
-        this.feline = feline; // dependency injection
+        this.feline = feline;
     }
 
     public int getKittens() {

@@ -28,32 +28,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.All in project_6.executor": "Run",
-    "JUnit.AnimalTest.executor": "Run",
-    "JUnit.CatTest,testGetSound and 1 more.executor": "Run",
-    "JUnit.CatTest.executor": "Run",
-    "JUnit.CatTest.testGetFood.executor": "Run",
-    "JUnit.CatTest.testGetSound.executor": "Run",
-    "JUnit.FelineTest.executor": "Run",
-    "JUnit.LionParameterizedTest.executor": "Run",
-    "JUnit.LionTest.constructorThrowsExceptionForInvalidSex.executor": "Run",
-    "JUnit.LionTest.doesHaveManeReturnsFalseForFemale.executor": "Run",
-    "JUnit.LionTest.doesHaveManeReturnsTrueForMale.executor": "Run",
-    "JUnit.LionTest.executor": "Run",
-    "JUnit.LionTest.getFoodCallsFelineEatMeat.executor": "Run",
-    "JUnit.LionTest.getKittensCallsFeline.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Sprint__6__full__fixed",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/SiberiaSOFT/qa_java",
-    "settings.editor.selected.configurable": "configurable.group.appearance"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.All in project_6.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AnimalTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CatTest,testGetSound and 1 more.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CatTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CatTest.testGetFood.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CatTest.testGetSound.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.FelineTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LionParameterizedTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LionTest.constructorThrowsExceptionForInvalidSex.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LionTest.doesHaveManeReturnsFalseForFemale.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LionTest.doesHaveManeReturnsTrueForMale.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LionTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LionTest.getFoodCallsFelineEatMeat.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.LionTest.getKittensCallsFeline.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Sprint__6__full__fixed&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/SiberiaSOFT/qa_java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.appearance&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\SiberiaSOFT\qa_java\.idea" />
@@ -149,9 +149,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.LionTest" />
-        <item itemvalue="JUnit.LionParameterizedTest" />
-        <item itemvalue="JUnit.FelineTest" />
         <item itemvalue="JUnit.CatTest" />
+        <item itemvalue="JUnit.FelineTest" />
+        <item itemvalue="JUnit.LionParameterizedTest" />
         <item itemvalue="JUnit.AnimalTest" />
       </list>
     </recent_temporary>
