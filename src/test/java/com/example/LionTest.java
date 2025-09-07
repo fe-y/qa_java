@@ -1,56 +1,55 @@
 package com.example;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
-public class LionTest {
+class LionTest {
 
-    private Predator predator;
-
-    @BeforeEach
-    void setUp() {
-        predator = Mockito.mock(Predator.class);
-    }
-
-    @Test
-    void testDoesHaveManeMale() throws Exception {
-        Lion male = new Lion("Самец", predator);
-        assertTrue(male.doesHaveMane());
-    }
-
-    @Test
-    void testDoesHaveManeFemale() throws Exception {
-        Lion female = new Lion("Самка", predator);
-        assertFalse(female.doesHaveMane());
-    }
-
-    @Test
-    void testGetKittens() throws Exception {
-        when(predator.getKittens()).thenReturn(2);
-        Lion lion = new Lion("Самец", predator);
-        assertEquals(2, lion.getKittens());
-    }
-
-    @Test
-    void testGetFood() throws Exception {
-        List<String> expected = List.of("Животные", "Птицы", "Рыба");
-        when(predator.eatMeat()).thenReturn(expected);
-
-        Lion lion = new Lion("Самец", predator);
-        assertEquals(expected, lion.getFood());
+    @ParameterizedTest
+    @CsvSource({
+            "Самец, true",
+            "Самка, false"
+    })
+    void doesHaveManeReturnsCorrectly(String sex, boolean expectedHasMane) throws Exception {
+        Feline mockFeline = mock(Feline.class);
+        Lion lion = new Lion(sex, mockFeline);
+        assertEquals(expectedHasMane, lion.doesHaveMane());
     }
 
     @Test
     void testInvalidSexThrowsException() {
+        Feline mockFeline = mock(Feline.class);
         Exception exception = assertThrows(Exception.class, () -> {
-            new Lion("Неизвестно", predator);
+            new Lion("Неизвестно", mockFeline);
         });
         assertEquals("Используйте допустимые значения пола животного - Самец или Самка", exception.getMessage());
+    }
+
+
+    @Test
+    void testGetKittens() throws Exception {
+        Feline mockFeline = mock(Feline.class);
+        when(mockFeline.getKittens()).thenReturn(2);
+
+        Lion lion = new Lion("Самец", mockFeline);
+        assertEquals(2, lion.getKittens());
+        verify(mockFeline, times(1)).getKittens();
+    }
+
+    @Test
+    void testGetFood() throws Exception {
+        Feline mockFeline = mock(Feline.class);
+        when(mockFeline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
+
+        Lion lion = new Lion("Самец", mockFeline);
+        List<String> actualFood = lion.getFood();
+        assertEquals(List.of("Животные", "Птицы", "Рыба"), actualFood);
+        verify(mockFeline, times(1)).eatMeat();
     }
 }

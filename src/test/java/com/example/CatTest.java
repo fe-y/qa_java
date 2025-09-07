@@ -10,13 +10,15 @@ import static org.mockito.Mockito.*;
 
 public class CatTest {
 
-    private Feline feline;
+    private Feline mockFeline;
     private Cat cat;
 
     @BeforeEach
     void setUp() {
-        feline = mock(Feline.class);
-        cat = new Cat(feline);
+        // Создаем мок Feline
+        mockFeline = mock(Feline.class);
+        // Передаем мок в Cat
+        cat = new Cat(mockFeline);
     }
 
     @Test
@@ -26,22 +28,18 @@ public class CatTest {
 
     @Test
     void testGetKittens() {
-        when(feline.getKittens()).thenReturn(1);
+        when(mockFeline.getKittens()).thenReturn(1); // обязательно для мока
         assertEquals(1, cat.getKittens());
+        verify(mockFeline, times(1)).getKittens();
     }
 
     @Test
-    void testGetFoodReturnsExpected() throws Exception {
+    void testGetFood() throws Exception {
         List<String> expected = List.of("Животные", "Птицы", "Рыба");
-        when(feline.eatMeat()).thenReturn(expected);
+        when(mockFeline.eatMeat()).thenReturn(expected); // обязательно для мока
+
         List<String> actual = cat.getFood();
         assertEquals(expected, actual);
-    }
-
-    @Test
-    void testGetFoodInvokesEatMeatOnce() throws Exception {
-        when(feline.eatMeat()).thenReturn(List.of("Животные", "Птицы", "Рыба"));
-        cat.getFood();
-        verify(feline, times(1)).eatMeat();
+        verify(mockFeline, times(1)).eatMeat();
     }
 }
