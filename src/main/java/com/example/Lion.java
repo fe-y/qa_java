@@ -4,8 +4,8 @@ import java.util.List;
 
 public class Lion {
 
-    private boolean hasMane;
     private Feline feline;
+    private final boolean hasMane;
 
     public Lion(String sex, Feline feline) throws Exception {
         if ("Самец".equals(sex)) {
@@ -15,15 +15,15 @@ public class Lion {
         } else {
             throw new Exception("Используйте допустимые значения пола животного - Самец или Самка");
         }
-        this.feline = feline; // dependency injection
-    }
-
-    public int getKittens() {
-        return feline.getKittens();
+        this.feline = feline;
     }
 
     public boolean doesHaveMane() {
         return hasMane;
+    }
+
+    public int getKittens() throws Exception {
+        return feline.getKittens();
     }
 
     public List<String> getFood() throws Exception {

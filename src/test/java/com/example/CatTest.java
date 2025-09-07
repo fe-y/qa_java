@@ -1,28 +1,47 @@
 package com.example;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
 import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 public class CatTest {
 
+    private Feline mockFeline;
+    private Cat cat;
+
+    @BeforeEach
+    void setUp() {
+        mockFeline = mock(Feline.class);
+        cat = new Cat(mockFeline);
+    }
+
     @Test
-    public void getSoundAlwaysMiau() {
-        Feline felineMock = mock(Feline.class);
-        Cat cat = new Cat(felineMock);
+    void testGetSound() {
         assertEquals("Мяу", cat.getSound());
     }
 
     @Test
-    public void getFoodUsesFelineMock() throws Exception {
-        Feline felineMock = mock(Feline.class);
-        when(felineMock.eatMeat()).thenReturn(List.of("Рыба", "Птицы"));
+    void testGetKittens() {
+        when(mockFeline.getKittens()).thenReturn(1);
 
-        Cat cat = new Cat(felineMock);
-        List<String> food = cat.getFood();
+        assertEquals(1, cat.getKittens());
 
-        assertEquals(List.of("Рыба", "Птицы"), food);
-        verify(felineMock, times(1)).eatMeat();
+        verify(mockFeline, times(1)).getKittens();
+    }
+
+    @Test
+    void testGetFood() throws Exception {
+
+        List<String> expectedFood = List.of("Рыба", "Птицы");
+        when(mockFeline.eatMeat()).thenReturn(expectedFood);
+
+        List<String> actualFood = cat.getFood();
+        assertEquals(expectedFood, actualFood);
+
+        verify(mockFeline, times(1)).eatMeat();
     }
 }
