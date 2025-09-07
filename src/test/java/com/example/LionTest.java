@@ -53,4 +53,5 @@ public class LionTest {
         });
         assertEquals("Используйте допустимые значения пола животного - Самец или Самка", exception.getMessage());
     }
+
 }

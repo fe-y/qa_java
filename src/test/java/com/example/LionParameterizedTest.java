@@ -18,4 +18,5 @@ class LionParameterizedTest {
         Lion lion = new Lion(sex, felineMock);
         assertEquals(expectedHasMane, lion.doesHaveMane());
     }
+
 }
